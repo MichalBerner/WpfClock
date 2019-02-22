@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfClock.ViewModels;
 
 namespace WpfClock
 {
@@ -20,9 +21,11 @@ namespace WpfClock
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		MainWindowViewModel ViewModel { get; }
 		public MainWindow()
 		{
 			InitializeComponent();
+			DataContext = new MainWindowViewModel();
 		}
 	}
 }

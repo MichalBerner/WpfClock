@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PropertyChanging;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 namespace WpfClock.Models
 {
-	[ImplementPropertyChanging]
-	class ModelBase
+	class ModelBase : INotifyPropertyChanged
 	{
+		public event PropertyChangedEventHandler PropertyChanged;
 	}
 }
