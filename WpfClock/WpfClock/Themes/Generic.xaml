@@ -28,19 +28,14 @@
 							Width="{StaticResource ClockSize}"
 							Height="{StaticResource ClockSize}"
 							TextBlock.FontSize="60">
-						<Grid Margin="15">
-							<Grid.RowDefinitions>
-								<RowDefinition/>
-								<RowDefinition/>
-								<RowDefinition/>
-							</Grid.RowDefinitions>
+						<UniformGrid Margin="15" Rows="3" Columns="1">
 							<TextBlock 
-								FontWeight="ExtraBold"
+								FontWeight="Black"
 								Style="{StaticResource textBlockStyle}"
 								Grid.Row="0"
 								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CurrentDateTime, StringFormat={}{0:HH}}"/>
 							<TextBlock 
-								FontWeight="ExtraBlack"
+								FontWeight="Black"
 								Style="{StaticResource textBlockStyle}"
 								Grid.Row="1"
 								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CurrentDateTime, StringFormat={}{0:mm}}"/>
@@ -49,10 +44,11 @@
 								Style="{StaticResource textBlockStyle}"
 								Grid.Row="2"
 								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CurrentDateTime, StringFormat={}{0:ss}}"/>
-						</Grid>
+						</UniformGrid>
 					</Border>
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
 	</Style>
+
 </ResourceDictionary>

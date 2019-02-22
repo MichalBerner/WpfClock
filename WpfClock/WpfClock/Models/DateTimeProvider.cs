@@ -12,7 +12,7 @@ namespace WpfClock.Models
 
 		public DateTimeProvider()
 		{
-			System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer
+			var timer = new System.Windows.Threading.DispatcherTimer
 			{
 				Interval = TimeSpan.FromSeconds(1)
 			};
