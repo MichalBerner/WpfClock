@@ -11,8 +11,8 @@
 		Title="WPF Example" Height="450" Width="800">
 	<UniformGrid>
 		<controls:Clock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Style="{StaticResource ResourceKey=dupa}" Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
+		<controls:Clock Style="{StaticResource ResourceKey=dupa}" Background="Black" Foreground="Wheat" BorderThickness="3" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
+		<controls:Clock Style="{StaticResource ResourceKey=kupa}" Background="Black" Foreground="Wheat" BorderThickness="2" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
+		<controls:Clock Style="{StaticResource ResourceKey=kupa}" Background="Beige" Foreground="SaddleBrown" BorderThickness="4" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
 	</UniformGrid>
 </Window>
