@@ -1,7 +1,5 @@
 ﻿using System;
 using WpfClock.Interfaces;
-using PropertyChanged;
-using System.ComponentModel;
 
 namespace WpfClock.Models
 {

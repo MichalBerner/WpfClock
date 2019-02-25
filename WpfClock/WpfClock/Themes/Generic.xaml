@@ -1,54 +1,6 @@
 <ResourceDictionary
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:controls="clr-namespace:WpfClock.Controls"
-	xmlns:sys="clr-namespace:System;assembly=mscorlib">
-	<!--<ResourceDictionary.MergedDictionaries>
-		<ResourceDictionary Source="Component/Themes/Clock.xaml"/>
-	</ResourceDictionary.MergedDictionaries>-->
-	<sys:Double x:Key="ClockSize">200</sys:Double>
-
-	<Style TargetType="Label" x:Key="labelStyle">
-		<Setter Property="HorizontalContentAlignment" Value="Center"/>
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=controls:Clock}}"/>
-	</Style>
-	<Style TargetType="TextBlock" x:Key="textBlockStyle">
-		<Setter Property="HorizontalAlignment" Value="Center"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
-	</Style>
-	<Style TargetType="{x:Type controls:Clock}">
-		<Setter Property="Template">
-			<Setter.Value>
-				<ControlTemplate TargetType="{x:Type controls:Clock}">
-					<Border Background="{TemplateBinding Background}"
-							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}"	
-							CornerRadius="20"
-							Width="{StaticResource ClockSize}"
-							Height="{StaticResource ClockSize}"
-							TextBlock.FontSize="60">
-						<UniformGrid Margin="15" Rows="3" Columns="1">
-							<TextBlock 
-								FontWeight="Black"
-								Style="{StaticResource textBlockStyle}"
-								Grid.Row="0"
-								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CurrentDateTime, StringFormat={}{0:HH}}"/>
-							<TextBlock 
-								FontWeight="Black"
-								Style="{StaticResource textBlockStyle}"
-								Grid.Row="1"
-								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CurrentDateTime, StringFormat={}{0:mm}}"/>
-							<TextBlock 
-								FontWeight="Light"
-								Style="{StaticResource textBlockStyle}"
-								Grid.Row="2"
-								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=CurrentDateTime, StringFormat={}{0:ss}}"/>
-						</UniformGrid>
-					</Border>
-				</ControlTemplate>
-			</Setter.Value>
-		</Setter>
-	</Style>
-
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/WpfClock;component/Themes/Clock.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
