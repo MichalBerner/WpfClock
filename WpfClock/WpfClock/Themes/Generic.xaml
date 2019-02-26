@@ -2,5 +2,6 @@
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceDictionary Source="/WpfClock;component/Themes/Clock.xaml"/>
+		<ResourceDictionary Source="/WpfClock;component/Themes/StopWatch.xaml"/>
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

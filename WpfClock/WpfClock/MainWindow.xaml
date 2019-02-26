@@ -3,19 +3,9 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:local="clr-namespace:WpfClock"
-		xmlns:vm="clr-namespace:WpfClock.ViewModels"
-		xmlns:controls="clr-namespace:WpfClock.Controls"
-		xmlns:sys="clr-namespace:System;assembly=mscorlib"
+		xmlns:views="clr-namespace:WpfClock.Views"
 		mc:Ignorable="d"
-		Title="WPF Example" Height="450" Width="800">
-	<UniformGrid>
-		<controls:Clock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Style="{StaticResource ResourceKey=dupa}" Background="Black" Foreground="Wheat" BorderThickness="3" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Style="{StaticResource ResourceKey=kupa}" Background="Black" Foreground="Wheat" BorderThickness="2" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Style="{StaticResource ResourceKey=kupa}" Background="Beige" Foreground="SaddleBrown" BorderThickness="4" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<TextBox x:Name="TextBox" Width="120" Height="20" Text="{Binding ElementName=TextBlock, Path=Text, Delay=400, UpdateSourceTrigger=PropertyChanged}"/>
-		<TextBlock x:Name="TextBlock" Width="120" Height="20" Text="Some sample text"/>
-
-	</UniformGrid>
+		Title="WPF Clock Example" Height="450" Width="800">
+			
+	<views:ClockPage/>
 </Window>

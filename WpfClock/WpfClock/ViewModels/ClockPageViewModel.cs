@@ -4,11 +4,11 @@ using WpfClock.Models;
 
 namespace WpfClock.ViewModels
 {
-	internal class MainWindowViewModel : ViewModelBase
+	internal class ClockPageViewModel : ViewModelBase
 	{
 		public IDateTimeProvider TimeProvider { get; }
 
-		public MainWindowViewModel()
+		public ClockPageViewModel()
 		{
 			TimeProvider = new DateTimeProvider();
 		}

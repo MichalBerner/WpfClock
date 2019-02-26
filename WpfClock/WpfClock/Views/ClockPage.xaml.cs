@@ -14,14 +14,14 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfClock.ViewModels;
 
-namespace WpfClock
+namespace WpfClock.Views
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for ClockPage.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class ClockPage : Page
 	{
-		public MainWindow()
+		public ClockPage()
 		{
 			InitializeComponent();
 			DataContext = new ClockPageViewModel();
