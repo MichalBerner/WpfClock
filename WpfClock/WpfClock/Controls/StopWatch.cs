@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -13,10 +9,15 @@ namespace WpfClock.Controls
 	[TemplatePart(Name = StopButtonPartName, Type = typeof(Button))]
 	public class StopWatch : Control
 	{
+		//todo: still needs some work :)
 		public const string StartButtonPartName = "PART_StartButton";
 		public const string StopButtonPartName = "PART_StopButton";
 
 		private Button _startButton;
+		private Button _stopButton;
+
+		Storyboard _myWidthAnimatedButtonStoryboard;
+
 
 		static StopWatch()
 		{
@@ -37,28 +38,29 @@ namespace WpfClock.Controls
 		{
 			base.OnApplyTemplate();
 			_startButton = Template.FindName(StartButtonPartName, this) as Button;
-
 			_startButton.Click += StartAnimation;
+
+			_stopButton = Template.FindName(StopButtonPartName, this) as Button;
+			_stopButton.Click += StopAnimation;
+		}
+
+		private void StopAnimation(object sender, RoutedEventArgs e)
+		{
+			_myWidthAnimatedButtonStoryboard?.Pause(this);
 		}
 
 		private void StartAnimation(object sender, RoutedEventArgs e)
 		{
 
-			DoubleAnimation myDoubleAnimation = new DoubleAnimation();
+			var myDoubleAnimation = new DoubleAnimation();
 			myDoubleAnimation.From = 0.0;
 			myDoubleAnimation.To = 60.0;
 			myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(60));
-			this.RegisterName( "dupa", this);
-
-			// Configure the animation to target the button's Width property.
-			Storyboard.SetTargetName(myDoubleAnimation, "dupa");
 			Storyboard.SetTargetProperty(myDoubleAnimation, new PropertyPath(StopWatch.SecondssProperty));
 
-			// Create a storyboard to contain the animation.
-			Storyboard myWidthAnimatedButtonStoryboard = new Storyboard();
-			myWidthAnimatedButtonStoryboard.Children.Add(myDoubleAnimation);
-			myWidthAnimatedButtonStoryboard.Begin(this);
-
+			_myWidthAnimatedButtonStoryboard = new Storyboard();
+			_myWidthAnimatedButtonStoryboard.Children.Add(myDoubleAnimation);
+			_myWidthAnimatedButtonStoryboard.Begin(this);
 
 		}
 	}

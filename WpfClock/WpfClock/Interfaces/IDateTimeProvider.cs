@@ -2,7 +2,7 @@
 
 namespace WpfClock.Interfaces
 {
-	interface IDateTimeProvider
+	public interface IDateTimeProvider
 	{
 		DateTime CurrentDateTime { get; }
 	}

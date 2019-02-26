@@ -1,16 +1,16 @@
-﻿using System;
-using WpfClock.Interfaces;
+﻿using WpfClock.Interfaces;
 using WpfClock.Models;
 
 namespace WpfClock.ViewModels
 {
-	internal class ClockPageViewModel : ViewModelBase
+	public class ClockPageViewModel : ViewModelBase
 	{
 		public IDateTimeProvider TimeProvider { get; }
 
 		public ClockPageViewModel()
 		{
 			TimeProvider = new DateTimeProvider();
+			//NastyThings.Do();
 		}
 
 	}

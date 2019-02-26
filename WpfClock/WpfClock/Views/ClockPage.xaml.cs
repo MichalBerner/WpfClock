@@ -24,7 +24,6 @@ namespace WpfClock.Views
 		public ClockPage()
 		{
 			InitializeComponent();
-			DataContext = new ClockPageViewModel();
 		}
 	}
 }
