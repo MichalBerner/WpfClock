@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\AnimatedClock.cs" />
     <Compile Include="Controls\Clock.cs" />
     <Compile Include="Controls\StopWatch.cs" />
     <Compile Include="Converters\DateTimeToSecondAngleConverter.cs" />
@@ -91,6 +92,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\Clock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\AnimatedClock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

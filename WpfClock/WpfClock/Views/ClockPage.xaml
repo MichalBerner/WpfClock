@@ -4,6 +4,7 @@
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 	  xmlns:controls="clr-namespace:WpfClock.Controls"
+	  xmlns:sys="clr-namespace:System;assembly=mscorlib"
 	  mc:Ignorable="d" 
 	  d:DesignHeight="450" d:DesignWidth="800"
 	  Title="ClockPage"
@@ -19,6 +20,7 @@
 		<controls:Clock Style="{StaticResource ResourceKey=Analog}" Background="Beige" Foreground="SaddleBrown" BorderThickness="4" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
 		<TextBox x:Name="TextBox" Width="120" Height="20" Text="{Binding ElementName=TextBlock, Path=Text, Delay=400, UpdateSourceTrigger=PropertyChanged}"/>
 		<TextBlock x:Name="TextBlock" Width="120" Height="20" Text="Some sample text"/>
+		<controls:AnimatedClock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{x:Static sys:DateTime.Now}"/>
 
 	</UniformGrid>
 </Page>

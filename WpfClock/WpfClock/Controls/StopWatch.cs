@@ -17,7 +17,7 @@ namespace WpfClock.Controls
 		private Button _stopButton;
 
 		Storyboard _myWidthAnimatedButtonStoryboard;
-
+		DoubleAnimation _myDoubleAnimation;
 
 		static StopWatch()
 		{
@@ -46,21 +46,25 @@ namespace WpfClock.Controls
 
 		private void StopAnimation(object sender, RoutedEventArgs e)
 		{
-			_myWidthAnimatedButtonStoryboard?.Pause(this);
+			_myWidthAnimatedButtonStoryboard.Pause(this);
+			//BeginAnimation(StopWatch.SecondssProperty, null);
 		}
 
 		private void StartAnimation(object sender, RoutedEventArgs e)
 		{
 
-			var myDoubleAnimation = new DoubleAnimation();
-			myDoubleAnimation.From = 0.0;
-			myDoubleAnimation.To = 60.0;
-			myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(60));
-			Storyboard.SetTargetProperty(myDoubleAnimation, new PropertyPath(StopWatch.SecondssProperty));
+			_myDoubleAnimation = new DoubleAnimation();
+			_myDoubleAnimation.From = 0.0;
+			_myDoubleAnimation.To = 60.0;
+			_myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(60));
+
+			//this.BeginAnimation(StopWatch.SecondssProperty, _myDoubleAnimation);
+
+			Storyboard.SetTargetProperty(_myDoubleAnimation, new PropertyPath(StopWatch.SecondssProperty));
 
 			_myWidthAnimatedButtonStoryboard = new Storyboard();
-			_myWidthAnimatedButtonStoryboard.Children.Add(myDoubleAnimation);
-			_myWidthAnimatedButtonStoryboard.Begin(this);
+			_myWidthAnimatedButtonStoryboard.Children.Add(_myDoubleAnimation);
+			_myWidthAnimatedButtonStoryboard.Begin(this, true);
 
 		}
 	}

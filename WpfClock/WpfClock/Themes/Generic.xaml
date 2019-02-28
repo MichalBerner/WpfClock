@@ -3,5 +3,8 @@
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceDictionary Source="/WpfClock;component/Themes/Clock.xaml"/>
 		<ResourceDictionary Source="/WpfClock;component/Themes/StopWatch.xaml"/>
+		<ResourceDictionary Source="/WpfClock;component/Themes/AnimatedClock.xaml"/>
 	</ResourceDictionary.MergedDictionaries>
+
+
 </ResourceDictionary>
