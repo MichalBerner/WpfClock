@@ -20,7 +20,7 @@
 		<controls:Clock Style="{StaticResource ResourceKey=Analog}" Background="Beige" Foreground="SaddleBrown" BorderThickness="4" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
 		<TextBox x:Name="TextBox" Width="120" Height="20" Text="{Binding ElementName=TextBlock, Path=Text, Delay=400, UpdateSourceTrigger=PropertyChanged}"/>
 		<TextBlock x:Name="TextBlock" Width="120" Height="20" Text="Some sample text"/>
-		<controls:AnimatedClock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{x:Static sys:DateTime.Now}"/>
+		<controls:AnimatedClock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray"/>
 
 	</UniformGrid>
 </Page>

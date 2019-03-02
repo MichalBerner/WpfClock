@@ -31,7 +31,7 @@
 									HorizontalAlignment="Center" VerticalAlignment="Bottom"
 									RenderTransformOrigin="0.5 1">
 									<Rectangle.RenderTransform>
-										<RotateTransform Angle="{Binding CurrentDateTime, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource HourConverter}}"/>
+										<RotateTransform Angle="{Binding Source={x:Static sys:DateTime.Now}, Converter={StaticResource HourConverter}, Mode=OneTime}"/>
 									</Rectangle.RenderTransform>
 								</Rectangle>
 								<Rectangle Name="Minutes"
@@ -39,7 +39,7 @@
 									HorizontalAlignment="Center" VerticalAlignment="Bottom"
 									RenderTransformOrigin="0.5 1">
 									<Rectangle.RenderTransform>
-										<RotateTransform Angle="{Binding CurrentDateTime, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource MinuteConverter}}"/>
+										<RotateTransform Angle="{Binding Source={x:Static sys:DateTime.Now}, Converter={StaticResource MinuteConverter}, Mode=OneTime}"/>
 									</Rectangle.RenderTransform>
 								</Rectangle>
 								<Rectangle Name="Seconds"
@@ -47,7 +47,7 @@
 									HorizontalAlignment="Center" VerticalAlignment="Bottom"
 									RenderTransformOrigin="0.5 1">
 									<Rectangle.RenderTransform>
-										<RotateTransform Angle="{Binding CurrentDateTime, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource SecondConverter}}"/>
+										<RotateTransform Angle="{Binding Source={x:Static sys:DateTime.Now}, Converter={StaticResource SecondConverter}, Mode=OneTime}"/>
 									</Rectangle.RenderTransform>
 								</Rectangle>
 								<Ellipse Width="9" Height="9" Grid.RowSpan="2" Fill="Red"/>
@@ -86,6 +86,5 @@
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
-
 	</Style>
 </ResourceDictionary>

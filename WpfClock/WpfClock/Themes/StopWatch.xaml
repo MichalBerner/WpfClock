@@ -4,8 +4,23 @@
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 	
 	<Style TargetType="TextBlock" x:Key="textBlockStyle">
+		<Setter Property="FontFamily" Value="Consolas"/>
+		<Setter Property="FontWeight" Value="Bold"/>
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="FontSize" Value="50"/>
+	</Style>
+
+	<Style TargetType="Button" x:Key="ButtonStyle">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Border Width="60" Height="40" CornerRadius="20" Background="{Binding RelativeSource={RelativeSource AncestorType=controls:StopWatch}, Path=Foreground}" >
+						<ContentPresenter/>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
 	</Style>
 	
 	<Style TargetType="{x:Type controls:StopWatch}">
@@ -20,16 +35,33 @@
 								TextBlock.Foreground="{TemplateBinding Foreground}"
 								BorderBrush="{TemplateBinding BorderBrush}"
 								BorderThickness="{TemplateBinding BorderThickness}"	
-								CornerRadius="20"
-								TextBlock.FontSize="60">
+								CornerRadius="20">
 							<UniformGrid Margin="15" Rows="3" Columns="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"	>
 								<TextBlock 
 								FontWeight="Black"
 								Style="{StaticResource textBlockStyle}"
-								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Secondss, StringFormat={}{0:00.00} }"
+								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Seconds, StringFormat={}{0:00.00} }"
 								Foreground="Wheat"	/>
-								<Button x:Name="PART_StartButton" Content="Start" FontSize="20"/>
-								<Button x:Name="PART_StopButton" Content="Stop" FontSize="20"/>
+								<TextBlock 
+								FontWeight="Black"
+								Style="{StaticResource textBlockStyle}"
+								Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Seconds, StringFormat={}{0:00.00} }"
+								Foreground="Wheat"	/>
+								<UniformGrid Rows="1">
+									<Button x:Name="PART_LapResetButton" Style="{StaticResource ButtonStyle}">
+										<UniformGrid Columns="1">
+											<TextBlock HorizontalAlignment="Center" Foreground="{TemplateBinding Background}">LAP</TextBlock>
+											<TextBlock HorizontalAlignment="Center" Foreground="{TemplateBinding Background}">RESET</TextBlock>
+										</UniformGrid>
+									</Button>
+									<Button x:Name="PART_StartStopButton" Style="{StaticResource ButtonStyle}">
+										<UniformGrid Columns="1">
+											<TextBlock HorizontalAlignment="Center" Foreground="{TemplateBinding Background}">START</TextBlock>
+											<TextBlock HorizontalAlignment="Center" Foreground="{TemplateBinding Background}">STOP</TextBlock>
+										</UniformGrid>
+									</Button>
+
+								</UniformGrid>
 							</UniformGrid>
 						</Border>
 					</Viewbox>

@@ -17,16 +17,6 @@ namespace WpfClock.Controls
 {
 	public class AnimatedClock : Control
 	{
-		public DateTime CurrentDateTime
-		{
-			get { return (DateTime)GetValue(CurrentDateTimeProperty); }
-			set { SetValue(CurrentDateTimeProperty, value); }
-		}
-
-
-		// Using a DependencyProperty as the backing store for currentDateTime.  This enables animation, styling, binding, etc...
-		public static readonly DependencyProperty CurrentDateTimeProperty =
-			DependencyProperty.Register(nameof(CurrentDateTime), typeof(DateTime), typeof(AnimatedClock), new PropertyMetadata(default(DateTime)));
 
 		static AnimatedClock()
 		{
