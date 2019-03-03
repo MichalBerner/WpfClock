@@ -64,6 +64,7 @@
     <Compile Include="Controls\AnimatedClock.cs" />
     <Compile Include="Controls\Clock.cs" />
     <Compile Include="Controls\StopWatch.cs" />
+    <Compile Include="Controls\StopWatchState\IStopWatchState.cs" />
     <Compile Include="Converters\DateTimeToSecondAngleConverter.cs" />
     <Compile Include="Converters\DateTimeToMinuteAngleConverter.cs" />
     <Compile Include="Converters\DateTimeToHourAngleConverter.cs" />
@@ -135,6 +136,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="FodyWeavers.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

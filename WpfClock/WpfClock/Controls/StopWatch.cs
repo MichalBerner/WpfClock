@@ -5,22 +5,83 @@ using System.Windows.Media.Animation;
 
 namespace WpfClock.Controls
 {
-	[TemplatePart(Name = StartButtonPartName, Type = typeof(Button))]
-	[TemplatePart(Name = StopButtonPartName, Type = typeof(Button))]
+	[TemplatePart(Name = StartStopButtonPartName, Type = typeof(Button))]
+	[TemplatePart(Name = LapResetButtonPartName, Type = typeof(Button))]
 	public class StopWatch : Control
 	{
-		public const string StartButtonPartName = "PART_StartStopButton";
-		public const string StopButtonPartName = "PART_LapResetButton";
+		public const string StartStopButtonPartName = "PART_StartStopButton";
+		public const string LapResetButtonPartName = "PART_LapResetButton";
 
-		private Button _startButton;
-		private Button _stopButton;
+		private readonly StopWatchState InitialState;
+		private readonly StopWatchState RunningState;
+		private readonly StopWatchState PausedState;
 
-		Storyboard _stopWatchStoryboard;
-		DoubleAnimation _secondsAnimation;
+		private StopWatchState CurrentState;
+
+		private Button _startStopButton;
+		private Button _lapResetButton;
+
+		private Storyboard _stopWatchStoryboard;
+		private DoubleAnimation _secondsAnimation;
 
 		static StopWatch()
 		{
 			DefaultStyleKeyProperty.OverrideMetadata(typeof(StopWatch), new FrameworkPropertyMetadata(typeof(StopWatch)));
+		}
+
+		public StopWatch()
+		{
+			InitialState = CreateInitialState();
+			RunningState = CreateRunningState();
+			PausedState = CreatePausedState();
+
+			CurrentState = InitialState;
+		}
+
+		private StopWatchState CreateInitialState()
+		{
+			return new StopWatchState
+			{
+				StartStopClicked = () =>
+				{
+					Start();
+					CurrentState = RunningState;
+				},
+				LapResetClicked = () => { }
+			};
+		}
+
+		private StopWatchState CreateRunningState()
+		{
+			return new StopWatchState
+			{
+				StartStopClicked = () =>
+				{
+					Pause();
+					CurrentState = PausedState;
+				},
+				LapResetClicked = () =>
+				{
+					Lap();
+				}
+			};
+		}
+
+		private StopWatchState CreatePausedState()
+		{
+			return new StopWatchState
+			{
+				StartStopClicked = () =>
+				{
+					Resume();
+					CurrentState = RunningState;
+				},
+				LapResetClicked = () =>
+				{
+					Reset();
+					CurrentState = InitialState;
+				}
+			};
 		}
 
 		public double Seconds
@@ -38,22 +99,49 @@ namespace WpfClock.Controls
 
 			InitializeStoryboard();
 
-			_startButton = Template.FindName(StartButtonPartName, this) as Button;
-			_startButton.Click += StartAnimation;
+			_startStopButton = Template.FindName(StartStopButtonPartName, this) as Button;
+			_startStopButton.Click += StartStopButonClicked;
 
-			_stopButton = Template.FindName(StopButtonPartName, this) as Button;
-			_stopButton.Click += StopAnimation;
+			_lapResetButton = Template.FindName(LapResetButtonPartName, this) as Button;
+			_lapResetButton.Click += LapResetButtonClicked;
 		}
 
-		private void StopAnimation(object sender, RoutedEventArgs e)
+		private void Pause()
 		{
 			_stopWatchStoryboard.Pause(this);
-			var x = _stopWatchStoryboard.GetCurrentTime(this);
+
 		}
 
-		private void StartAnimation(object sender, RoutedEventArgs e)
+		private void Lap()
+		{
+			var x = _stopWatchStoryboard.GetCurrentTime(this);
+
+		}
+
+		private void Start()
 		{
 			_stopWatchStoryboard.Begin(this, true);
+
+		}
+
+		private void Reset()
+		{
+			_stopWatchStoryboard.Stop(this);
+		}
+
+		private void Resume()
+		{
+			_stopWatchStoryboard.Resume(this);
+		}
+
+		private void LapResetButtonClicked(object sender, RoutedEventArgs e)
+		{
+			CurrentState.LapResetClicked();
+		}
+
+		private void StartStopButonClicked(object sender, RoutedEventArgs e)
+		{
+			CurrentState.StartStopClicked();
 		}
 
 		private void InitializeStoryboard()
