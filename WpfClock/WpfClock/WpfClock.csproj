@@ -78,7 +78,10 @@
     <Compile Include="Views\ClockPage.xaml.cs">
       <DependentUpon>ClockPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewModelLocator.cs" />
+    <Compile Include="Locators\ViewModelLocator.cs" />
+    <Compile Include="Views\ClockPage2.xaml.cs">
+      <DependentUpon>ClockPage2.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,6 +116,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ClockPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClockPage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

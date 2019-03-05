@@ -4,8 +4,16 @@
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:views="clr-namespace:WpfClock.Views"
+		xmlns:viewModels="clr-namespace:WpfClock.ViewModels"
 		mc:Ignorable="d"
 		Title="WPF Clock Example" Height="450" Width="800">
-			
-	<views:ClockPage/>
+	<TabControl>
+		<TabItem Header="ClockPage">
+			<Frame Source="Views/ClockPage.xaml"/>
+		</TabItem>
+		<TabItem Header="ClockPage 2">
+			<viewModels:ClockPageViewModel/>
+		</TabItem>
+	</TabControl>
+	<!--<viewModels:ClockPageViewModel/>-->
 </Window>

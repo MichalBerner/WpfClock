@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfClock.ViewModels;
 
-namespace WpfClock.Views
+namespace WpfClock.Locators
 {
 	public class ViewModelLocator
 	{

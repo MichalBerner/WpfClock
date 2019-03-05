@@ -13,7 +13,7 @@
 
 	<UniformGrid >
 		<controls:Clock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:StopWatch Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" />
+		<controls:StopWatch Background="Black" Foreground="Wheat" BorderThickness="2" BorderBrush="DarkGray" />
 		<controls:Clock Background="Gold" Foreground="SaddleBrown" BorderThickness="10" BorderBrush="OrangeRed" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
 		<controls:Clock Style="{StaticResource ResourceKey=Round}" Background="Black" Foreground="Wheat" BorderThickness="3" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
 		<controls:Clock Style="{StaticResource ResourceKey=Analog}" Background="Black" Foreground="Wheat" BorderThickness="2" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>

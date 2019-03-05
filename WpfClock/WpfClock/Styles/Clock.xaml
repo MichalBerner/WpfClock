@@ -78,11 +78,16 @@
 									</Rectangle.RenderTransform>
 								</Rectangle>
 								<Rectangle 
-									Width="2" Height="80" Fill="Red"  
+									Width="2" Height="100" Fill="Red"  
 									HorizontalAlignment="Center" VerticalAlignment="Bottom"
-									RenderTransformOrigin="0.5 1">
+									RenderTransformOrigin="0.5 1"
+									Margin="0 0 0 -20">
 									<Rectangle.RenderTransform>
-										<RotateTransform Angle="{Binding CurrentDateTime, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource SecondConverter}}"/>
+										<RotateTransform 
+											Angle="{Binding CurrentDateTime, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource SecondConverter}}"
+											CenterX="0"
+											CenterY="-20"
+											/>
 									</Rectangle.RenderTransform>
 								</Rectangle>
 								<Ellipse Width="9" Height="9" Grid.RowSpan="2" Fill="Red"/>

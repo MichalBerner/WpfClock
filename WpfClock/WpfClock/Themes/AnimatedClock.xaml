@@ -71,7 +71,7 @@
 									<DoubleAnimation 
 										Storyboard.TargetName="Hours" 
 										Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" 
-										Duration="1:0:0" By="30" RepeatBehavior="Forever" />
+										Duration="1:0:0" By="30" RepeatBehavior="Forever" IsAdditive="False"/>
 								</Storyboard>
 
 							</BeginStoryboard>
