@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:viewModels="clr-namespace:WpfClock.ViewModels"
+					xmlns:views="clr-namespace:WpfClock.Views">
+	<DataTemplate DataType="{x:Type viewModels:ClockPageViewModel}">
+		<views:ClockPage/>
+	</DataTemplate>
+</ResourceDictionary>

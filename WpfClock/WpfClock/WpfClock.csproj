@@ -61,15 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\AnimatedClock.cs" />
     <Compile Include="Controls\Clock.cs" />
-    <Compile Include="Controls\StopWatch.cs" />
-    <Compile Include="Controls\StopWatchState\IStopWatchState.cs" />
-    <Compile Include="Converters\DateTimeToSecondAngleConverter.cs" />
-    <Compile Include="Converters\DateTimeToMinuteAngleConverter.cs" />
-    <Compile Include="Converters\DateTimeToHourAngleConverter.cs" />
-    <Compile Include="Converters\MultiplyConverter.cs" />
-    <Compile Include="Converters\SumMultiConverter.cs" />
     <Compile Include="Helpers\NastyThings.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="ViewModels\ClockPageViewModel.cs" />
@@ -79,9 +71,6 @@
       <DependentUpon>ClockPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Locators\ViewModelLocator.cs" />
-    <Compile Include="Views\ClockPage2.xaml.cs">
-      <DependentUpon>ClockPage2.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -95,19 +84,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Styles\Clock.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\AnimatedClock.xaml">
+    <Page Include="Styles\DataTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Clock.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\StopWatch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,10 +97,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ClockPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ClockPage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,7 +132,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Converters\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>

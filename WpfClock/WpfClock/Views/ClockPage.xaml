@@ -7,20 +7,15 @@
 	  xmlns:sys="clr-namespace:System;assembly=mscorlib"
 	  mc:Ignorable="d" 
 	  d:DesignHeight="450" d:DesignWidth="800"
-	  Title="ClockPage"
+	  Title="Clock Page"
 	  DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=ClockPageViewModel}">
 
 
 	<UniformGrid >
-		<controls:Clock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:StopWatch Background="Black" Foreground="Wheat" BorderThickness="2" BorderBrush="DarkGray" />
-		<controls:Clock Background="Gold" Foreground="SaddleBrown" BorderThickness="10" BorderBrush="OrangeRed" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Style="{StaticResource ResourceKey=Round}" Background="Black" Foreground="Wheat" BorderThickness="3" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Style="{StaticResource ResourceKey=Analog}" Background="Black" Foreground="Wheat" BorderThickness="2" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<controls:Clock Style="{StaticResource ResourceKey=Analog}" Background="Beige" Foreground="SaddleBrown" BorderThickness="4" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
-		<TextBox x:Name="TextBox" Width="120" Height="20" Text="{Binding ElementName=TextBlock, Path=Text, Delay=400, UpdateSourceTrigger=PropertyChanged}"/>
-		<TextBlock x:Name="TextBlock" Width="120" Height="20" Text="Some sample text"/>
-		<controls:AnimatedClock Background="Black" Foreground="Wheat" BorderThickness="5" BorderBrush="DarkGray"/>
+		<controls:Clock Background="Black" Foreground="Wheat" BorderThickness="3" BorderBrush="DarkGray" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
+		<controls:Clock Background="Wheat" Foreground="SaddleBrown" BorderThickness="3" BorderBrush="SaddleBrown" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
+		<controls:Clock Background="Orange" Foreground="DarkRed" BorderThickness="3" BorderBrush="Black" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
+		<controls:Clock Background="BlueViolet" Foreground="LimeGreen" BorderThickness="3" BorderBrush="LimeGreen" CurrentDateTime="{Binding TimeProvider.CurrentDateTime}"/>
 
 	</UniformGrid>
 </Page>

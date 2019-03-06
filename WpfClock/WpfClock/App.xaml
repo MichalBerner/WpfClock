@@ -7,14 +7,13 @@
 			 StartupUri="MainWindow.xaml">
 	<Application.Resources>
 		<ResourceDictionary>
-			<DataTemplate DataType="{x:Type viewModels:ClockPageViewModel}">
-				<views:ClockPage2/>
-			</DataTemplate>
+			
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Styles/DataTemplates.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
 			
 			<locators:ViewModelLocator x:Key="ViewModelLocator"/>
-			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="Styles/Clock.xaml"/>
-			</ResourceDictionary.MergedDictionaries>
+
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>
